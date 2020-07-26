@@ -1,49 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {dish} from '../shared/dish';
+import {Dish} from '../shared/dish';    //object structure for 1 dish item in menu
+import {DISHES} from '../shared/dishes';  //contains the whole menu
 
-const DISHES : dish[] = [      //notice this is an array of objects of class "dish" 
-  {
-    id: '0',
-    name: 'Uthappizza',
-    image: '/assets/images/uthappizza.png',
-    category: 'mains',
-    featured: true,
-    label: 'Hot',
-    price: '4.99',
-    // tslint:disable-next-line:max-line-length
-    description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'
-  },
-  {
-    id: '1',
-    name: 'Zucchipakoda',
-    image: '/assets/images/zucchipakoda.png',
-    category: 'appetizer',
-    featured: false,
-    label: '',
-    price: '1.99',
-    description: 'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'
-  },
-  {
-    id: '2',
-    name: 'Vadonut',
-    image: '/assets/images/vadonut.png',
-    category: 'appetizer',
-    featured: false,
-    label: 'New',
-    price: '1.99',
-    description: 'A quintessential ConFusion experience, is it a vada or is it a donut?'
-  },
-  {
-    id: '3',
-    name: 'ElaiCheese Cake',
-    image: '/assets/images/elaicheesecake.png',
-    category: 'dessert',
-    featured: false,
-    label: '',
-    price: '2.99',
-    description: 'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'
-  }
-];
 
 
 
@@ -54,11 +12,17 @@ const DISHES : dish[] = [      //notice this is an array of objects of class "di
 })
 export class MenuComponent implements OnInit {
 
-  selectedDish : dish = DISHES[0];	
-  dishes: dish[] = DISHES;
+  dishes: Dish[] = DISHES;    //passed on to template as array of individual dish objects
+  selectedDish: Dish;
+  
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(dish: Dish) {
+    this.selectedDish = dish;
   }
 
 }
