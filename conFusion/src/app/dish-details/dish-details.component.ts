@@ -11,7 +11,7 @@ import { Dish } from "../shared/dish";
 })
 export class DishDetailsComponent implements OnInit {
 
-  @Input()      //input decorator to tell that this parameter comes as input from parent
+  @Input()      
   dish : Dish;
   constructor() { }
 
