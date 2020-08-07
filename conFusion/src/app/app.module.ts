@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import 'hammerjs';
 
-import {DishService} from './services/dish.service';
+import {DishService} from './services/dish.service';  //importing service
 // end of my imports
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -35,7 +35,7 @@ import { DishDetailsComponent } from './dish-details/dish-details.component';
     MatButtonModule
   ],
   providers: [
-    DishService
+    DishService       //services are specifies as provider in root module
   ],
   bootstrap: [AppComponent]
 })
