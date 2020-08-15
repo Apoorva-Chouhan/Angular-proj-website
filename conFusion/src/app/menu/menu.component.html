@@ -8,7 +8,7 @@
 	</div>
 	<div fxFlex>
 		<mat-grid-list cols="2" rowHeight="200px">
-			<mat-grid-tile class="menuListItem" *ngFor="let dish of dishes" (click)="onSelect(dish)">	<!--
+			<mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetails', dish.id]">	<!--
       iterates over all objects in array dishes in 
 			menu.components.ts file and creates a component in the given structure for each object-->
 				<img height="200px" src={{dish.image}} alt={{dish.name}}>
@@ -23,9 +23,6 @@
 		</mat-grid-list>	
 	</div>
 
-	<div fxFlex>
-		<app-dish-details [dish]="selectedDish"></app-dish-details> <!--passing selectedDish to dish to dish details component-->
-	</div>
-	
+
 
 </div>
